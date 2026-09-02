@@ -426,3 +426,29 @@
   }
   .post-cta p{margin:0;font-size:15px;font-weight:600;color:var(--navy-deep);}
   .back-link{display:inline-block;margin:32px 0 0;font-size:14px;color:var(--gold);font-weight:600;}
+
+.airline-strip{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:center;
+  gap:48px;
+  margin-top:36px;
+  padding:32px 0;
+}
+.airline-strip img{
+  height:36px;
+  width:auto;
+  object-fit:contain;
+  filter:grayscale(100%);
+  opacity:0.7;
+  transition:filter 0.25s ease, opacity 0.25s ease;
+}
+.airline-strip img:hover{
+  filter:grayscale(0%);
+  opacity:1;
+}
+@media (max-width:640px){
+  .airline-strip{ gap:28px; }
+  .airline-strip img{ height:28px; }
+}
