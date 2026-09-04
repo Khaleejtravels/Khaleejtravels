@@ -115,6 +115,17 @@ document.addEventListener('DOMContentLoaded', function(){
       paintStars(selectedRating);
     });
   }
+    // FAQ accordion (only present on the homepage)
+  document.querySelectorAll('.faq-item').forEach(item=>{
+    const btn = item.querySelector('.faq-q');
+    const answer = item.querySelector('.faq-a');
+    if(!btn || !answer) return;
+    btn.addEventListener('click', function(){
+      const isOpen = item.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      answer.style.maxHeight = isOpen ? (answer.scrollHeight + 'px') : '0';
+    });
+  });
 
   // Scroll-reveal animation (present on every page)
   const observer = new IntersectionObserver((entries)=>{
